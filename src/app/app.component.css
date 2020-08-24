@@ -1,0 +1,21 @@
+table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+
+}
+
+div {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.div-dropdown {
+  padding-left: 15px;
+}
+
+.btn-right{
+  float: right;
+}
+

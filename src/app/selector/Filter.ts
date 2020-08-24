@@ -10,6 +10,7 @@ export class MyFilterPipe implements PipeTransform {
     if (!items || !filter) {
       return items;
     }
-    return items.filter(s => s.parent.name === filter);;
+    return items.filter(s => s.parent.name === filter);
+
   }
 }

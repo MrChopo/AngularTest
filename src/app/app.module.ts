@@ -12,6 +12,9 @@ import {MatSelectModule} from '@angular/material/select';
 import {DragDropModule} from '@angular/cdk/drag-drop';
 import {MyFilterPipe} from './selector/Filter';
 import {DropdownComponent} from './selector/DropdownComponent';
+import {MatTableModule} from '@angular/material/table';
+import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+
 
 
 @NgModule({
@@ -20,18 +23,20 @@ import {DropdownComponent} from './selector/DropdownComponent';
     DropdownComponent,
     MyFilterPipe
   ],
-  imports: [
-    BrowserModule,
-    BrowserAnimationsModule,
-    MatSliderModule,
-    HttpClientModule,
-    MatListModule,
-    MatCheckboxModule,
-    MatButtonToggleModule,
-    MatSidenavModule,
-    MatSelectModule,
-    DragDropModule
-  ],
+    imports: [
+        BrowserModule,
+        BrowserAnimationsModule,
+        MatSliderModule,
+        HttpClientModule,
+        MatListModule,
+        MatCheckboxModule,
+        MatButtonToggleModule,
+        MatSidenavModule,
+        MatSelectModule,
+        DragDropModule,
+        MatTableModule,
+        NgbModule
+    ],
   providers: [],
   bootstrap: [AppComponent]
 })
