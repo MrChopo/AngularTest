@@ -1,37 +1,12 @@
 <div class="div-dropdown">
-  <dropdown [values]="parents" class="dropdown-margin" (select)="onselect($event.value)"></dropdown>
+  <par-dropdown [values]="skuService.parents"
+                class="dropdown-margin"
+                (select)="skuService.onselect($event.value)">
+  </par-dropdown>
 </div>
 
-<table class="table table-striped myClass">
+<app-skus-table></app-skus-table>
 
-  <thead>
-  <tr>
-    <th scope="col" ngbDropdown = parents>Category</th>
-    <th scope="col" (click)="sortedArrayByName()">SKU</th>
-    <th scope="col" (click)="sortedArrayByPrise()">Price</th>
-    <th scope="col">In cart</th>
-  </tr>
-  </thead>
-  <ng-container *ngFor="let sku of skus | myfilter:filterargs">
-  <tr *ngIf="(!sku.inCart && !isCart) || (sku.inCart && isCart)">
-    <td>{{ sku.parent.name }}</td>
-    <td>{{ sku.name }}</td>
-    <td>{{ sku.price | number }}</td>
-    <td> <mat-checkbox type="checkbox" (change)="checked(sku)" [checked]="sku.checked"></mat-checkbox></td>
-  </tr>
-  </ng-container>
-</table>
-
-
-  <div *ngIf="isCart">
-    <button type="button" class="btn btn-outline-success" (click)="showMarketItems()">Show market items</button>
-    <button type="button"  class="btn-right btn btn-warning" (click)="deleteFromCart()">Delete from cart</button>
-  </div>
-
-  <div *ngIf="!isCart">
-    <button type="button" class="btn btn-outline-success"(click)="showCartItems()">Show cart items</button>
-    <button type="button" class="btn-right btn btn-success" (click)="addSelectedToCard()">Add to card</button>
-  </div>
 
 
 

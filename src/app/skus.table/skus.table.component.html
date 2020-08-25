@@ -1,0 +1,31 @@
+<table class="table table-striped myClass">
+  <thead>
+  <tr>
+    <th scope="col" ngbDropdown = parents>Category</th>
+    <th scope="col" (click)="skuService.sortedArrayByName()">SKU</th>
+    <th scope="col" (click)="skuService.sortedArrayByPrise()">Price</th>
+    <th scope="col">In cart</th>
+  </tr>
+  </thead>
+  <ng-container *ngFor="let sku of skuService.skus | myfilter:skuService.returnFilter()">
+    <tr *ngIf="(!sku.inCart && !isCart) || (sku.inCart && isCart)">
+      <td>{{ sku.parent.name }}</td>
+      <td>{{ sku.name }}</td>
+      <td>{{ sku.price | number }}</td>
+      <td> <mat-checkbox type="checkbox" (change)="skuService.checked(sku)" [checked]="sku.checked"></mat-checkbox></td>
+    </tr>
+  </ng-container>
+</table>
+
+<div *ngIf="isCart; else isMarket">
+  <button type="button" class="btn btn-outline-success" (click)="showMarketItems()">Show market items</button>
+  <button type="button"  class="btn-right btn btn-warning" (click)="skuService.deleteFromCart()">Delete from cart</button>
+</div>
+<ng-template #isMarket>
+  <div>
+    <button type="button" class="btn btn-outline-success"(click)="showCartItems()">Show cart items</button>
+    <button type="button" class="btn-right btn btn-success" (click)="skuService.addSelectedToCard()">Add to card</button>
+  </div>
+</ng-template>
+
+

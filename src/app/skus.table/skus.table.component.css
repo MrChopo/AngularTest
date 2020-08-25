@@ -1,0 +1,22 @@
+table {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+
+}
+
+div {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}
+
+.btn-right{
+  float: right;
+}
+
+.else-btn {
+  margin-left: auto;
+  margin-right: auto;
+  width: 60%;
+}

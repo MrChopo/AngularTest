@@ -10,10 +10,11 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
 import {MatSidenavModule} from '@angular/material/sidenav';
 import {MatSelectModule} from '@angular/material/select';
 import {DragDropModule} from '@angular/cdk/drag-drop';
-import {MyFilterPipe} from './selector/Filter';
-import {DropdownComponent} from './selector/DropdownComponent';
+import {MyFilterPipe} from './filter/filter.pipe';
+import {DropdownComponent} from './dropdown/dropdown.component';
 import {MatTableModule} from '@angular/material/table';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
+import { SkusTableComponent } from './skus.table/skus.table.component';
 
 
 
@@ -21,7 +22,8 @@ import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
   declarations: [
     AppComponent,
     DropdownComponent,
-    MyFilterPipe
+    MyFilterPipe,
+    SkusTableComponent
   ],
     imports: [
         BrowserModule,

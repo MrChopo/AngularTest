@@ -1,12 +1,13 @@
 import {Component, EventEmitter, Input, Output} from '@angular/core';
-import {Parent} from '../services/skuService';
+import {Parent} from '../model/sku.model';
+
 
 @Component({
   // tslint:disable-next-line:component-utils
-  selector: 'dropdown',
+  selector: 'par-dropdown',
   template: ` <div class="row" >
                        <div>
-       <select  (change)="onSelect($event.target)" class="form-control" placeholder="--select--" >
+       <select  (change)="onSelect($event.target)" class="form-control" placeholder="select" >
          <option *ngFor="let value of values" (click)="selectItem(value.id)">{{value.name}}</option>
        </select>
 </div>
@@ -23,13 +24,11 @@ export class DropdownComponent {
     this.select.emit(val);
   }
 
-
   constructor() {
     this.select = new EventEmitter();
     this.values = new Array<Parent>();
   }
 
-  // tslint:disable-next-line:typedef
   selectItem(value) {
     this.select.emit(value);
   }

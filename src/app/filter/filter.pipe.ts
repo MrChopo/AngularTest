@@ -1,5 +1,5 @@
 import { Pipe, PipeTransform } from '@angular/core';
-import {Parent} from '../services/skuService';
+import {Parent} from '../model/sku.model';
 
 @Pipe({
   name: 'myfilter',
