@@ -1,7 +1,7 @@
 import {HttpClient, HttpHeaders} from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import {Observable} from 'rxjs';
 import {Parent, Sku} from '../model/sku.model';
+import {SkusApiService} from './skus.api.service';
 
 
 @Injectable({providedIn: 'root'})
@@ -11,14 +11,14 @@ export class SkusService {
   parents: Parent[] = [];
   filterargs: string = null;
 
-  constructor(private httpClient: HttpClient) {}
+  constructor(private httpClient: HttpClient, private skuApiService: SkusApiService) {}
 
 
   uploadData(): void{
-    this.getAllSku().subscribe(skusArray => {
+    this.skuApiService.getAllSku().subscribe(skusArray => {
       this.skus = skusArray});
 
-    this.getSkuParent().subscribe(parentsArray => {
+    this.skuApiService.getSkuParent().subscribe(parentsArray => {
       this.parents = parentsArray
       this.parents.push(new class implements Parent {
         id: number = 11;
@@ -68,14 +68,5 @@ export class SkusService {
   sortedArrayByPrise(): void{
     this.skus = this.skus.sort((a, b) => (a.price > b.price) ? 1 : -1);
   }
-
-  getAllSku(): Observable<Sku[]> {
-    return this.httpClient.get<Sku[]>('http://ssdev.superagent.ru/TestApp/Values/GetAll');
-  }
-
-  getSkuParent(): Observable<Parent[]> {
-    return this.httpClient.get<Parent[]>('http://ssdev.superagent.ru/TestApp/Values/GetParents');
-  }
-
 
 }
