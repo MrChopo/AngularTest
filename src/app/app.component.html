@@ -1,11 +1,6 @@
-<div class="div-dropdown">
-  <par-dropdown [values]="skuService.parents"
-                class="dropdown-margin"
-                (select)="skuService.onselect($event.value)">
-  </par-dropdown>
-</div>
+<app-navbar></app-navbar>
 
-<app-skus-table></app-skus-table>
+<router-outlet> </router-outlet>
 
 
 

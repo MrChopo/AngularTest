@@ -8,6 +8,7 @@ import {SkusApiService} from './skus.api.service';
 export class SkusService {
 
   skus: Sku[] = [];
+  skusCart: Sku[] = [];
   parents: Parent[] = [];
   filterargs: string = null;
 
@@ -45,8 +46,8 @@ export class SkusService {
   addSelectedToCard(): void {
     for (const sku of this.skus){
       if (sku.checked){
-        sku.inCart = true;
         sku.checked = false;
+        this.skusCart.push(sku);
       }
     }
   }
@@ -54,7 +55,6 @@ export class SkusService {
   deleteFromCart(): Sku[] {
     for (const sku of this.skus){
       if (sku.checked){
-        sku.inCart = false;
         sku.checked = false;
       }
     }

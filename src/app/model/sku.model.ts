@@ -11,5 +11,4 @@ export interface Sku {
   price: number;
   parent: Parent;
   checked?: boolean;
-  inCart?: boolean;
 }

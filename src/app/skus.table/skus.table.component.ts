@@ -9,20 +9,9 @@ import {Sku} from '../model/sku.model';
 })
 export class SkusTableComponent implements OnInit {
 
-  isCart = false;
-
-  constructor(private skuService: SkusService) { }
+  constructor(public skuService: SkusService) { }
 
   ngOnInit(): void {
   }
-
-  showMarketItems(): void {
-    this.isCart = false;
-  }
-
-  showCartItems(): void {
-    this.isCart = true;
-  }
-
 
 }

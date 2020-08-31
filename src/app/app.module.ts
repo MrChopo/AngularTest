@@ -15,6 +15,10 @@ import {DropdownComponent} from './dropdown/dropdown.component';
 import {MatTableModule} from '@angular/material/table';
 import { NgbModule } from '@ng-bootstrap/ng-bootstrap';
 import { SkusTableComponent } from './skus.table/skus.table.component';
+import { NavbarComponent } from './navbar/navbar.component';
+import {RouterModule} from '@angular/router';
+import {AppRoutingModule} from './app-routing.module';
+import { CartComponent } from './cart/cart.component';
 
 
 
@@ -23,7 +27,9 @@ import { SkusTableComponent } from './skus.table/skus.table.component';
     AppComponent,
     DropdownComponent,
     MyFilterPipe,
-    SkusTableComponent
+    SkusTableComponent,
+    NavbarComponent,
+    CartComponent
   ],
     imports: [
         BrowserModule,
@@ -37,7 +43,8 @@ import { SkusTableComponent } from './skus.table/skus.table.component';
         MatSelectModule,
         DragDropModule,
         MatTableModule,
-        NgbModule
+        NgbModule,
+        AppRoutingModule
     ],
   providers: [],
   bootstrap: [AppComponent]

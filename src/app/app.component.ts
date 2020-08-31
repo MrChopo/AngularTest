@@ -11,7 +11,7 @@ export class AppComponent implements OnInit{
 
   title = 'Test market';
 
-  constructor(private skuService: SkusService) {}
+  constructor(public skuService: SkusService) {}
 
 
   ngOnInit(): void {
