@@ -8,11 +8,11 @@ export class SkusApiService {
 
   constructor(private httpClient: HttpClient) {}
 
-  getAllSku(): Observable<Sku[]> {
+  public getAllSku(): Observable<Sku[]> {
     return this.httpClient.get<Sku[]>('http://ssdev.superagent.ru/TestApp/Values/GetAll');
   }
 
-  getSkuParent(): Observable<Parent[]> {
+  public getSkuParent(): Observable<Parent[]> {
     return this.httpClient.get<Parent[]>('http://ssdev.superagent.ru/TestApp/Values/GetParents');
   }
 }

@@ -29,7 +29,7 @@ export class DropdownComponent {
     this.values = new Array<Parent>();
   }
 
-  selectItem(value) {
+  public selectItem(value) {
     this.select.emit(value);
   }
 }

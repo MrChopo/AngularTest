@@ -7,11 +7,8 @@ import {Sku} from '../model/sku.model';
   templateUrl: './skus.table.component.html',
   styleUrls: ['./skus.table.component.css']
 })
-export class SkusTableComponent implements OnInit {
+export class SkusTableComponent {
 
   constructor(public skuService: SkusService) { }
-
-  ngOnInit(): void {
-  }
 
 }
