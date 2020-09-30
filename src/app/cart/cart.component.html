@@ -20,3 +20,21 @@
 <div>
   <button type="button"  class="btn-right btn btn-warning" (click)="skuService.deleteFromCart()">Delete from cart</button>
 </div>
+
+<div *ngFor="let sku of skuService.skusCart | myfilter:skuService.returnFilter()">
+<div class="card">
+  <img class="card-img-top" src="https://holistic-shop.ru/userfiles/image/blog/1280-481971741-cat-eating.jpg" alt="Card image cap">
+  <div class="card-body">
+    <h3 class="card-title">{{ sku.name }}</h3>
+    <p class="card-text">Some text about this sku
+      <br>Some text about this sku Some text about this sku
+      <br>Some text about this sku
+      <br>Some text about this sku Some text about this sku
+      <br>Some text about this sku Some text about this sku</p>
+  </div>
+  <div class="card-body">
+    <h3 class="card-title">Цена: {{ sku.price | number }}</h3>
+    <button class="btn btn-primary">Add to cart</button>
+  </div>
+</div>
+</div>

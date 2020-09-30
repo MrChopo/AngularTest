@@ -1,30 +1,21 @@
-<div class="div-dropdown">
+<div class="d-flex toolbar">
+  <input #search
+         class="form-control"
+         type="text"
+         placeholder="Найти"
+         (keyup.enter)="filterSku(search.value)">
+  <button class="btn btn-primary"
+          (click)="filterSku(search.value)">Найти</button>
   <par-dropdown [values]="skuService.parents"
-                class="dropdown-margin"
-                (select)="skuService.onselect($event.value)">
+                  class="dropdown-margin"
+                  (select)="skuService.onselect($event.value)">
   </par-dropdown>
+  <button class="btn btn-primary"
+          (click)="sortByPrice()">Сортировать</button>
 </div>
 
-<table class="table table-striped myClass">
-  <thead>
-  <tr>
-    <th scope="col" ngbDropdown = parents>Category</th>
-    <th scope="col" (click)="skuService.sortedArrayByName()">SKU</th>
-    <th scope="col" (click)="skuService.sortedArrayByPrise()">Price</th>
-    <th scope="col">In cart</th>
-  </tr>
-  </thead>
-  <ng-container *ngFor="let sku of skuService.skus | myfilter:skuService.returnFilter()">
-    <tr>
-      <td>{{ sku.parent.name }}</td>
-      <td>{{ sku.name }}</td>
-      <td>{{ sku.price | number }}</td>
-      <td> <mat-checkbox type="checkbox" (change)="skuService.checked(sku)" [checked]="sku.checked"></mat-checkbox></td>
-    </tr>
-  </ng-container>
-</table>
-<div>
-  <button type="button" class="btn-right btn btn-success" (click)="skuService.addSelectedToCard()">Add to card</button>
+<div *ngFor="let sku of skuService.skus | myfilter:skuService.returnFilter()">
+  <app-sku-card [sku]="sku"></app-sku-card>
 </div>
 
 

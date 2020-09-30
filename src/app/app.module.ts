@@ -19,6 +19,8 @@ import { NavbarComponent } from './navbar/navbar.component';
 import {RouterModule} from '@angular/router';
 import {AppRoutingModule} from './app-routing.module';
 import { CartComponent } from './cart/cart.component';
+import { SkuCardComponent } from './sku-card/sku-card.component';
+import {FormsModule} from '@angular/forms';
 
 
 
@@ -29,7 +31,8 @@ import { CartComponent } from './cart/cart.component';
     MyFilterPipe,
     SkusTableComponent,
     NavbarComponent,
-    CartComponent
+    CartComponent,
+    SkuCardComponent
   ],
     imports: [
         BrowserModule,
@@ -44,7 +47,8 @@ import { CartComponent } from './cart/cart.component';
         DragDropModule,
         MatTableModule,
         NgbModule,
-        AppRoutingModule
+        AppRoutingModule,
+        FormsModule
     ],
   providers: [],
   bootstrap: [AppComponent]

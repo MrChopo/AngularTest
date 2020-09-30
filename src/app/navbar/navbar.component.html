@@ -1,10 +1,12 @@
-  <h1>
-    <a [routerLink]="['/']">Test Market</a>
-    <li class="active"  routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">
-      <a [routerLink]="['/']">Market</a>
-    </li>
-    <li routerLinkActive="active"><a [routerLink]="['/cart']">Cart</a></li>
-  </h1>
-
+<div class="d-flex">
+    <ul ngbNav class="nav-pills" orientation="horizontal">
+      <li ngbNavItem="market">
+        <a ngbNavLink [routerLink]="['/']">Market</a>
+      </li>
+      <li ngbNavItem="cart">
+        <a ngbNavLink [routerLink]="['/cart']">Cart</a>
+      </li>
+    </ul>
+</div>
 
 

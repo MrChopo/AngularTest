@@ -1,6 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, OnInit, ViewChild, ViewContainerRef} from '@angular/core';
 import {SkusService} from '../services/skus.service';
-import {Sku} from '../model/sku.model';
 
 @Component({
   selector: 'app-skus-table',
@@ -11,4 +10,11 @@ export class SkusTableComponent {
 
   constructor(public skuService: SkusService) { }
 
+  filterSku(value: string) {
+    console.log(value);
+  }
+
+  sortByPrice() {
+
+  }
 }

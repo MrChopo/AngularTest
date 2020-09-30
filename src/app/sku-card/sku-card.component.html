@@ -1,0 +1,23 @@
+<div class="card">
+  <img class="card-img-top"
+       [src]=randomImg()
+       alt="Card image cap">
+  <div class="card-body">
+    <h3 class="card-title">{{ sku.name }}</h3>
+    <p class="card-text">Some text about this sku
+      <br>Some text about this sku Some text about this sku
+      <br>Some text about this sku
+      <br>Some text about this sku Some text about this sku
+      <br>Some text about this sku Some text about this sku</p>
+  </div>
+  <div class="card-body price-block">
+    <h3 class="card-title">Цена: {{ sku.price | number }}</h3>
+    <div class="card-count">
+      <button class="btn btn-primary btn-count">-</button>
+      <input class="form-control input-count"
+             placeholder="1">
+      <button class="btn btn-primary btn-count">+</button>
+    </div>
+    <button class="btn btn-primary">Add to cart</button>
+  </div>
+</div>

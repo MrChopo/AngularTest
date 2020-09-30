@@ -5,12 +5,6 @@ table {
 
 }
 
-div {
-  margin-left: auto;
-  margin-right: auto;
-  width: 60%;
-}
-
 .btn-right{
   float: right;
 }
@@ -20,3 +14,16 @@ div {
   margin-right: auto;
   width: 60%;
 }
+
+.card {
+  width: 60%;
+  margin: 10px auto;
+  flex-direction: row;
+}
+
+.card-img-top {
+  margin: 20px;
+  width: 200px;
+  height: 150px;
+}
+

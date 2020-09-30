@@ -5,13 +5,9 @@ import {Parent} from '../model/sku.model';
 @Component({
   // tslint:disable-next-line:component-utils
   selector: 'par-dropdown',
-  template: ` <div class="row" >
-                       <div>
-       <select  (change)="onSelect($event.target)" class="form-control" placeholder="select" >
+  template: `<select  (change)="onSelect($event.target)" class="form-control" placeholder="select" >
          <option *ngFor="let value of values" (click)="selectItem(value.id)">{{value.name}}</option>
-       </select>
-</div>
-</div>`
+       </select>`
 })
 
 export class DropdownComponent {

@@ -1,0 +1,33 @@
+.card {
+  width: 60%;
+  margin: 10px auto;
+  flex-direction: row;
+}
+
+.price-block {
+  min-width: 20%;
+}
+
+.card-img-top {
+  margin: 20px;
+  width: 200px;
+  height: 200px;
+}
+
+.btn-count {
+  width: 35px;
+  margin: 0px;
+}
+
+.card-count {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.input-count {
+  padding: 0;
+  text-align: center;
+  margin: 2px;
+  width: 2rem;
+}
